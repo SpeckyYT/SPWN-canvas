@@ -1,0 +1,15 @@
+canvas = import 'canvas.spwn'
+
+let myCanvas = canvas::new(40,20,31,31,10/31)
+
+myCanvas.setColor(0,0,0)
+myCanvas.drawFill()
+
+myCanvas.setColor(255,0,0)
+myCanvas.drawPixel(1,1)
+
+myCanvas.setColor(255,0,128)
+myCanvas.drawRect(2,3,4,3)
+
+myCanvas.setColor(255,0,255)
+myCanvas.drawCircle(6,6,24)
