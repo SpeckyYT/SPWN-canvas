@@ -16,14 +16,14 @@ Simple SPWN canvas for all your needs
 Creates a new canvas.
 
 ```spwn
-myCanvas = canvas.new(
+myCanvas = canvas::new(
     x,y,            // position
     width,height,   // width and height in pixels
     scale?,         // the pixel-scaling of the canvas
     groups?         // the group(s) it should add to all the pixels of the canvas (array or group)
 )
 
-myCanvas = canvas.new(
+myCanvas = canvas::new(
     10,10,
     31,31,
     0.7,
