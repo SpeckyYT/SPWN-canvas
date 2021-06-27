@@ -4,7 +4,7 @@ let PI = 3.141592653589793
 
 type @canvas
 impl @canvas {
-    new: (x:@number, y:@number, width:@number, height:@number, scale:@number = 1){
+    new: (x:@number, y:@number, width:@number, height:@number, scale:@number = 1, groups:@group|@array = []){
         let colors = []
         for w in ..width {
             let colorsH = []
@@ -20,6 +20,7 @@ impl @canvas {
                     Y: 30*scaling*h+30*scaling/2,
                     COLOR: color,
                     SCALING: scaling,
+                    GROUPS: groups,
                 }
                 $.add(pixel)
             }
