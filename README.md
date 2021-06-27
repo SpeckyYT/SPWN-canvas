@@ -6,10 +6,30 @@ Simple SPWN canvas for all your needs
 
 1) Copy `canvas.spwn` in your directory
 2) Import canvas with `canvas = import 'canvas.spwn'`
-3) Create a new canvas instance by doing `myCanvas = canvas.new(x,y,width,height,scale?)`
+3) Create a new canvas (see below)
 4) You're ready to go!
 
 ## Methods
+
+### new
+
+Creates a new canvas.
+
+```spwn
+myCanvas = canvas.new(
+    x,y,            // position
+    width,height,   // width and height in pixels
+    scale?,         // the pixel-scaling of the canvas
+    groups?         // the group(s) it should add to all the pixels of the canvas (array or group)
+)
+
+myCanvas = canvas.new(
+    10,10,
+    31,31,
+    0.7,
+    ?g
+)
+```
 
 ### setColor
 
