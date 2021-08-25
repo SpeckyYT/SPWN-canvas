@@ -53,12 +53,14 @@ impl @canvas {
         self.drawRect(0,0,self.width,self.height)
     },
     drawEllipse: (self, x:@number, y:@number, width:@number, height:@number){
+        cwidth = width + 1
+        cheight = height + 1
         let tracker = []
         for i in 0..360 {
             let angle = i/180 * PI
-            let x1 = x + $.floor(width/2 + width/3 * $.cos(angle) - height/3 * $.sin(angle))
-            let y1 = y + $.floor(height/2 + height/3 * $.cos(angle) + width/3 * $.sin(angle))
-            let key = x1 as @string + ' ' + y1 as @string
+            let x1 = x + $.floor(cwidth/2 + cwidth/3 * $.cos(angle) - cheight/3 * $.sin(angle) - 1.5)
+            let y1 = y + $.floor(cheight/2 + cheight/3 * $.cos(angle) + cwidth/3 * $.sin(angle) - 1.5)
+            let key = y1 * height + x1
             if !tracker.contains(key) {
                 self.drawPixel(x1,y1)
                 tracker.push(key)
