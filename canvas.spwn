@@ -7,24 +7,20 @@ impl @canvas {
     new: (x:@number, y:@number, width:@number, height:@number, scale:@number = 1, groups:@group|@array = []){
         let colors = []
         for w in ..width {
-            let colorsH = []
-            // let colors[w] = []
+            colors.push([])
             for h in ..height {
-                let color = ?c
-                colorsH.push(color)
-                // let colors[w][h] = ?c
+                colors[w].push(?c)
                 scaling = $.ceil(scale*100)/100
                 pixel = obj {
                     OBJ_ID: 211,
                     X: 30*scaling*w+30*scaling/2,
                     Y: 30*scaling*h+30*scaling/2,
-                    COLOR: color,
+                    COLOR: colors[w][h],
                     SCALING: scaling,
                     GROUPS: groups,
                 }
                 $.add(pixel)
             }
-            colors.push(colorsH)
         }
         return @canvas::{
             x, y,
