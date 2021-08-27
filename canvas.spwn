@@ -13,8 +13,8 @@ impl @canvas {
                 scaling = $.ceil(scale*100)/100
                 pixel = obj {
                     OBJ_ID: 211,
-                    X: 30*scaling*w+30*scaling/2,
-                    Y: 30*scaling*h+30*scaling/2,
+                    X: 30*scaling*(w+1/2),
+                    Y: 30*scaling*(h+1/2),
                     COLOR: colors[w][h],
                     SCALING: scaling,
                     GROUPS: groups,
