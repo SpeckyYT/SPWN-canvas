@@ -4,7 +4,7 @@ let PI = 3.141592653589793
 
 type @canvas
 impl @canvas {
-    new: (x:@number, y:@number, width:@number, height:@number, scale:@number = 1, groups:@group|@array = []){
+    new: (x:@number = 0, y:@number = 0, width:@number = 10, height:@number = 10, scale:@number = 1, groups:@group|[@group] = []){
         let colors = []
         for w in ..width {
             colors.push([])
