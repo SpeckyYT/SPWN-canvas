@@ -10,7 +10,6 @@ impl @canvas {
             colors.push([])
             for h in ..height {
                 colors[w].push(?c)
-                scaling = $.ceil(scale*100)/100
                 pixel = obj {
                     OBJ_ID: 211,
                     X: x + 30 * scaling * (w+1/2),
