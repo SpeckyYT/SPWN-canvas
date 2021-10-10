@@ -4,7 +4,7 @@ let PI = 3.141592653589793
 
 type @canvas
 impl @canvas {
-    new: (x:@number = 0, y:@number = 0, width:@number = 10, height:@number = 10, scale:@number = 1, groups:@group|[@group] = []){
+    new: (x:@number = 0, y:@number = 0, width:@number = 10, height:@number = 10, scaling:@number = 1, groups:@group|[@group] = []){
         let colors = []
         for w in ..width {
             colors.push([])
@@ -24,7 +24,7 @@ impl @canvas {
         return @canvas::{
             x, y,
             width, height,
-            scale,
+            scaling,
             colors,
             r: 0, g: 0, b: 0,
         }
