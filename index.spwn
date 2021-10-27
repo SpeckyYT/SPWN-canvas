@@ -1,6 +1,13 @@
-canvas = import 'canvas.spwn'
+import 'canvas.spwn'
 
-let myCanvas = canvas::new(40,20,31,31,10/31)
+let myCanvas = @canvas::new(
+    x = 40,
+    y = 20,
+    width = 31,
+    height = 31,
+    scaling = 10/31,
+    use_groups = false,
+)
 
 myCanvas.setColor(0,0,0)
 myCanvas.drawFill()
