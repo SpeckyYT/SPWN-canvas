@@ -1,6 +1,6 @@
 extract obj_props
 
-let PI = 3.141592653589793
+DEFAULT_COLOR = rgb(0,0,0)
 
 type @canvas
 impl @canvas {
@@ -14,9 +14,9 @@ impl @canvas {
         use_groups:@bool = false,
     ){
         let colors = []
-        for w in ..width {
+        for w in 0..width {
             colors.push([])
-            for h in ..height {
+            for h in 0..height {
                 colors[w].push(?g if use_groups else ?c)
                 let pixel = obj {
                     OBJ_ID: 211,
@@ -25,7 +25,7 @@ impl @canvas {
                     SCALING: scaling,
                     GROUPS: groups,
                 }
-                switch colors[w][h] {
+                match colors[w][h] {
                     @color: (){
                         pixel.set(COLOR, colors[w][h])
                     }(),
@@ -41,18 +41,16 @@ impl @canvas {
             width, height,
             scaling,
             colors,
-            r: 0, g: 0, b: 0,
+            color: DEFAULT_COLOR,
         }
     },
-    setColor: (self, r:@number = 0, g:@number = 0, b:@number = 0){
-        self.r = r
-        self.g = g
-        self.b = b
+    setColor: (self, color:@chroma = DEFAULT_COLOR){
+        self.color = color
     },
     drawPixel: (self, x:@number, y:@number){
-        -> switch self.colors[x][y] {
-            @color: self.colors[x][y].set(self.r, self.g, self.b),
-            @group: self.colors[x][y].pulse(self.r, self.g, self.b, hold = 9999),
+        -> match self.colors[x][y] {
+            @color: self.colors[x][y].set(self.color),
+            @group: self.colors[x][y].pulse(self.color, hold = 9999),
         }
     },
     drawRect: (self, x:@number, y:@number, w:@number, h:@number){
