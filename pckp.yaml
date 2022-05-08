@@ -1,0 +1,7 @@
+%YAML 1.2
+---
+
+name: canvas
+version: 0.0.1
+folders:
+  - src
