@@ -1,4 +1,4 @@
-import 'canvas.spwn'
+import './src'
 
 let myCanvas = @canvas::new(
     x = 40,
