@@ -36,7 +36,7 @@ myCanvas = canvas::new(
 Sets the current color for drawing.
 
 ```spwn
-myCanvas.setColor(r,g,b)
+myCanvas.setColor(rgb8(r, g, b))
 
 myCanvas.setColor(255,192,203)
 ```
